@@ -1,0 +1,44 @@
+{{define "disapproved"}}
+<!DOCTYPE html>
+<html lang="en">
+
+{{template "html-head" "Stakeholder Disapproved Blocks"}}
+    {{template "navbar" . }}
+    <div class="container main" data-controller="time">
+        <h4><span title="blocks disapproved by stakeholder voting"><img class="h30 p2tb" src="/images/pos-hammer.svg" alt="pos hammer"> Stakeholder Disapproved Blocks</span></h4>
+        <h6>There are currently {{len .Data}} blocks that have been <a href="{{.Links.POSExplanation}}">disapproved via PoS voting.</a></h6>
+        <div class="row">
+            <div class="col-lg-24">
+                <table class="table table-responsive-sm" id="disapprovedblockstable">
+                    <thead>
+                        <tr>
+                            <th>Height</th>
+                            <th>Main Chain</th>
+                            <th>Parent</th>
+                            <th>Child</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {{range .Data}}
+                        <tr id="{{ .Height }}">
+                            <td class="mono fs15"><a href="/block/{{.Hash}}" class="fs16 height">{{ .Height }}</a></td>
+                            <td class="mono fs15">{{.IsMainchain}}</td>
+                            <td class="break-word"><a href="/block/{{.PrevHash}}" class="hash lh1rem">{{ .PrevHash }}</a></td>
+                            {{if .NextHash }}
+                            <td class="break-word"><a href="/block/{{.NextHash}}" class="hash lh1rem">{{ .NextHash }}</a></td>
+                            {{else}}
+                            <td class="break-word" title="This block is the tip of its chain.">none</td>
+                            {{end}}
+                        </tr>
+                    {{end}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{{ template "footer" . }}
+
+</body>
+</html>
+{{ end }}

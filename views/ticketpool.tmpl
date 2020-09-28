@@ -1,0 +1,50 @@
+{{define "ticketpool"}}
+<!DOCTYPE html>
+<html lang="en">
+{{template "html-head" printf "Hdfchain Ticket Pool"}}
+    {{template "navbar" . }}
+
+    <div class="container main" data-controller="ticketpool">
+      <div>
+        <h2 style="text-align: center; margin-top: 0px">Ticket Pool Visualization</h2>
+        <p style="text-align: center; margin-bottom: 5px">
+          These charts represent the current ticket pool. For historic views go <a href="/charts">here</a>.
+        </p>
+      </div>
+      <br>
+
+      <div class="position-relative" data-target="ticketpool.wrapper">
+        <div class="modal position-absolute"></div>
+        <label>Zoom :</label>
+        <div class="btn-group" data-toggle="buttons">
+          <input data-target="ticketpool.zoom" data-action="click->ticketpool#onZoom" type="button" class="btn btn_sm all btn-active" value="Blocks" name="all">
+          <input data-target="ticketpool.zoom" data-action="click->ticketpool#onZoom" type="button" class="btn btn_sm 1d" value="Day" name="day">
+          <input data-target="ticketpool.zoom" data-action="click->ticketpool#onZoom" type="button" class="btn btn_sm 1wk" value="Week" name="wk">
+          <input data-target="ticketpool.zoom" data-action="click->ticketpool#onZoom" type="button" class="btn btn_sm 1m" value="Month" name="mo">
+        </div>
+
+        <label>&nbsp;&nbsp;Bars :</label>
+        <div class="btn-group" data-toggle="buttons">
+          <input data-target="ticketpool.bars" data-action="click->ticketpool#onBarsChange" type="button" class="btn btn_sm all btn-active" value="Blocks" name="all">
+          <input data-target="ticketpool.bars" data-action="click->ticketpool#onBarsChange" type="button" class="btn btn_sm 1d" value="Day" name="day">
+          <input data-target="ticketpool.bars" data-action="click->ticketpool#onBarsChange" type="button" class="btn btn_sm 1wk" value="Week" name="wk">
+          <input data-target="ticketpool.bars" data-action="click->ticketpool#onBarsChange" type="button" class="btn btn_sm 1m" value="Month" name="mo">
+        </div>
+
+        <div id="tickets_by_purchase_date" class="tp-charts"></div>
+        <br>
+        <div id="tickets_by_purchase_price" class="tp-charts"></div>
+        <br>
+        <div class="justify-content-between">
+          <div class="dygraph-label dygraph-title mb-1">Distribution of Tickets by Reward Outputs</div>
+          <div class="row col-lg-12 col-sm-8 d-flex text-center m-auto">
+            <table class="tp-outputs-align" data-target="ticketpool.outputs">
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ template "footer" . }}
+</body>
+</html>
+{{end}}

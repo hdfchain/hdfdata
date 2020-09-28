@@ -1,0 +1,251 @@
+{{define "visualblocks"}}
+<!DOCTYPE html>
+<html lang="en">
+{{ template "html-head" "Hdfchain Block Explorer by hdfdata.org"}}
+    {{ template "navbar" . }}
+
+    <div
+        id="mainContainer"
+        class="container py-1"
+        data-controller="time"
+    >
+        <div
+            class="blocks-section"
+            data-controller="visualBlocks"
+            data-target="visualBlocks.root"
+        >
+            <a
+                class="no-underline title font-weight-bold"
+                href="/blocks"
+                data-target="visualBlocks.title"
+                href="/blocks"
+            >Latest Blocks</a>
+            <div
+                class="blocks-holder"
+                data-target="visualBlocks.box"
+            >
+                <!-- add mempool element -->
+                {{with .Mempool}}
+                <div class="block visible" data-target="visualBlocks.block">
+                    <div class="block-info">
+                        <a class="color-code" href="/mempool">Mempool</a>
+                        <div class="mono amount" style="line-height: 1;">
+                                <span>{{template "decimalParts" (float64AsDecimalParts .Total 0 false)}}</span>
+                            <span class="unit"> HDF</span>
+                        </div>
+                        <span class="timespan">
+                            <span data-target="time.age" data-age="{{.Time}}"></span>&nbsp;ago
+                        </span>
+                    </div>
+                    <div class="block-rows">
+                        <div class="block-rewards" style="flex-grow: 1">
+                            <span class="pow" style="flex-grow: {{toFloat64Amount .Subsidy.PoW}}"
+                                title='{"object": "PoW Reward", "total": "{{toFloat64Amount .Subsidy.PoW}}"}'
+                                data-target="visualBlocks.tooltip">
+                                <a class="block-element-link" href="#">
+                                    <span class="paint" style="width: {{intMultiply (len .Votes) 20}}%"></span>
+                                </a>
+                            </span>
+                            <span class="pos" style="flex-grow: {{toFloat64Amount .Subsidy.PoS}}"
+                                title='{"object": "PoS Reward", "total": "{{toFloat64Amount .Subsidy.PoS}}"}'
+                                data-target="visualBlocks.tooltip">
+                                <a class="block-element-link" href="#">
+                                    <span class="paint" style="width: {{intMultiply (len .Votes) 20}}%"></span>
+                                </a>
+                            </span>
+                            <span class="fund" style="flex-grow: {{toFloat64Amount .Subsidy.Dev}}"
+                                title='{"object": "Project Fund", "total": "{{toFloat64Amount .Subsidy.Dev}}"}'
+                                data-target="visualBlocks.tooltip">
+                                <a class="block-element-link" href="#">
+                                    <span class="paint" style="width: {{intMultiply (len .Votes) 20}}%"></span>
+                                </a>
+                            </span>
+                            <span class="fees" style="flex-grow: {{.Fees}}"
+                                title='{"object": "Tx Fees", "total": "{{.Fees}}"}'
+                                data-target="visualBlocks.tooltip">
+                                <a class="block-element-link" href="#"></a>
+                            </span>
+                        </div>
+
+                        <div class="block-votes" style="flex-grow: 1">
+                        {{range .Votes}}
+                            <span style="background-color: {{if .VoteValid}}#2971ff{{else}}rgba(253, 113, 74, 0.8){{end}}"
+                                title='{"object": "Vote", "voteValid": "{{.VoteValid}}"}'>
+                                <a class="block-element-link" href="/tx/{{.TxID}}"></a>
+                            </span>
+                        {{end}}
+                        {{if lt (len .Votes) 5}}
+                        {{$remainingVoteCount := intSubtract 5 (len .Votes)}}
+                        {{range (zeroSlice $remainingVoteCount)}}
+                        <span title="Empty vote slot"></span>
+                        {{end}}
+                        {{end}}
+                        </div>
+
+                        <div class="block-tickets" style="flex-grow: 1">
+                        <!-- show tickets before revs, if tickets are more than 50, truncate at 30 and show more tip -->
+                        {{$tickets := .Tickets}}
+                        {{$ticketsCount := len .Tickets}}
+                        {{if gt $ticketsCount 50}} {{$tickets = clipSlice .Tickets 30}} {{end}}
+                        {{range $tickets}}
+                        <span class="block-ticket"
+                            title='{"object": "Ticket", "total": "{{.Total}}", "vout": "{{.VoutCount}}", "vin": "{{.VinCount}}"}'>
+                            <a class="block-element-link" href="/tx/{{.TxID}}"></a>
+                        </span>
+                        {{end}}
+                        {{if gt $ticketsCount 50}}
+                        <!-- show total number of tickets -->
+                        <span class="block-ticket" style="flex-grow: 10; flex-basis: 50px;" title="Total of {{$ticketsCount}} tickets">
+                            <a class="block-element-link" href="#">+ {{intSubtract $ticketsCount 30}}</a>
+                        </span>
+                        {{end}}
+                        {{range .Revocations}}
+                        <span class="block-rev"
+                            title='{"object": "Revocation", "total": "{{.Total}}", "vout": "{{.VoutCount}}", "vin": "{{.VinCount}}"}'>
+                            <a class="block-element-link" href="/tx/{{.TxID}}"></a>
+                        </span>
+                        {{end}}
+                        {{$ticketsRevsCount := intAdd $ticketsCount (len .Revocations)}}
+                        {{range (zeroSlice (intSubtract 20 $ticketsRevsCount))}}
+                        <span title="Empty ticket slot"></span>
+                        {{end}}
+                        </div>
+
+                        <div class="block-transactions" style="flex-grow: 1">
+                        {{$txs := .Transactions}}
+                        {{$txCount := len .Transactions}}
+                        {{if gt $txCount 50}} {{$txs = clipSlice .Transactions 30}} {{end}}
+                        {{range $txs}}
+                        <span class="block-tx" style="flex-grow: {{.Total}}"
+                            title='{"object": "Transaction", "total": "{{.Total}}", "vout": "{{.VoutCount}}", "vin": "{{.VinCount}}"}'>
+                            <a class="block-element-link" href="/tx/{{.TxID}}"></a>
+                        </span>
+                        {{end}}
+                        {{if gt $txCount 50}}
+                        <!-- show total number of tickets -->
+                        <span class="block-ticket" style="flex-grow: 10; flex-basis: 50px;" title="Total of {{$txCount}} transactions">
+                            <a class="block-element-link" href="#">+ {{intSubtract $txCount 30}}</a>
+                        </span>
+                        {{end}}
+                        </div>
+                    </div>
+                </div>
+                {{end}}
+
+                {{range $index, $block := .Blocks}}
+                <div class="{{if lt $index 10}}block visible{{else}}block{{end}}" data-target="visualBlocks.block">
+                {{with $block}}
+                    <div class="block-info">
+                        <a class="color-code" href="/block/{{.Height}}">{{.Height}}</a>
+                        <div class="mono amount" style="line-height: 1;">
+                            <span>{{template "decimalParts" (float64AsDecimalParts .Total 0 false)}}</span>
+                            <span class="unit"> HDF</span>
+                        </div>
+                        <span class="timespan">
+                            <span data-target="time.age" data-age="{{.Time.UNIX}}"></span>&nbsp;ago
+                        </span>
+                    </div>
+                    <div class="block-rows">
+                        <div class="block-rewards" style="flex-grow: 1">
+                            <span class="pow" style="flex-grow: {{toFloat64Amount .Subsidy.PoW}}"
+                                title='{"object": "PoW Reward", "total": "{{toFloat64Amount .Subsidy.PoW}}"}'
+                                data-target="visualBlocks.tooltip">
+                                <a class="block-element-link" href="#">
+                                    <span class="paint" style="width: {{intMultiply (len .Votes) 20}}%"></span>
+                                </a>
+                            </span>
+                            <span class="pos" style="flex-grow: {{toFloat64Amount .Subsidy.PoS}}"
+                                title='{"object": "PoS Reward", "total": "{{toFloat64Amount .Subsidy.PoS}}"}'
+                                data-target="visualBlocks.tooltip">
+                                <a class="block-element-link" href="#">
+                                    <span class="paint" style="width: {{intMultiply (len .Votes) 20}}%"></span>
+                                </a>
+                            </span>
+                            <span class="fund" style="flex-grow: {{toFloat64Amount .Subsidy.Developer}}"
+                                title='{"object": "Project Fund", "total": "{{toFloat64Amount .Subsidy.Developer}}"}'
+                                data-target="visualBlocks.tooltip">
+                                <a class="block-element-link" href="#">
+                                    <span class="paint" style="width: {{intMultiply (len .Votes) 20}}%"></span>
+                                </a>
+                            </span>
+                            <span class="fees" style="flex-grow: {{.Fees}}"
+                                title='{"object": "Tx Fees", "total": "{{.Fees}}"}'
+                                data-target="visualBlocks.tooltip">
+                                <a class="block-element-link" href="#"></a>
+                            </span>
+                        </div>
+
+                        <div class="block-votes" style="flex-grow: 1">
+                        {{range .Votes}}
+                            <span style="background-color: {{if .VoteValid}}#2971ff{{else}}rgba(253, 113, 74, 0.8){{end}}"
+                                title='{"object": "Vote", "voteValid": "{{.VoteValid}}"}'>
+                                <a class="block-element-link" href="/tx/{{.TxID}}"></a>
+                            </span>
+                        {{end}}
+                        {{if lt (len .Votes) 5}}
+                        {{$remainingVoteCount := intSubtract 5 (len .Votes)}}
+                        {{range (zeroSlice $remainingVoteCount)}}
+                        <span title="Empty vote slot"></span>
+                        {{end}}
+                        {{end}}
+                        </div>
+
+                        <div class="block-tickets" style="flex-grow: 1">
+                        <!-- show tickets before revs, if tickets are more than 50, truncate at 30 and show more tip -->
+                        {{$tickets := .Tickets}}
+                        {{$ticketsCount := len .Tickets}}
+                        {{if gt $ticketsCount 50}} {{$tickets = clipSlice .Tickets 30}} {{end}}
+                        {{range $tickets}}
+                        <span class="block-ticket"
+                            title='{"object": "Ticket", "total": "{{.Total}}", "vout": "{{.VoutCount}}", "vin": "{{.VinCount}}"}'>
+                            <a class="block-element-link" href="/tx/{{.TxID}}"></a>
+                        </span>
+                        {{end}}
+                        {{if gt $ticketsCount 50}}
+                        <!-- show total number of tickets -->
+                        <span class="block-ticket" style="flex-grow: 10; flex-basis: 50px;" title="Total of {{$ticketsCount}} tickets">
+                            <a class="block-element-link" href="#">+ {{intSubtract $ticketsCount 30}}</a>
+                        </span>
+                        {{end}}
+                        {{range .Revocations}}
+                        <span class="block-rev"
+                            title='{"object": "Revocation", "total": "{{.Total}}", "vout": "{{.VoutCount}}", "vin": "{{.VinCount}}"}'>
+                            <a class="block-element-link" href="/tx/{{.TxID}}"></a>
+                        </span>
+                        {{end}}
+                        {{$ticketsRevsCount := intAdd $ticketsCount (len .Revocations)}}
+                        {{range (zeroSlice (intSubtract 20 $ticketsRevsCount))}}
+                        <span title="Empty ticket slot"></span>
+                        {{end}}
+                        </div>
+
+                        <div class="block-transactions" data-target="visualBlocks.txs" style="flex-grow: 1">
+                        {{$txs := .Transactions}}
+                        {{$txCount := len .Transactions}}
+                        {{if gt $txCount 50}} {{$txs = clipSlice .Transactions 30}} {{end}}
+                        {{range $txs}}
+                        <span class="block-tx" style="flex-grow: {{.Total}}"
+                            title='{"object": "Transaction", "total": "{{.Total}}", "vout": "{{.VoutCount}}", "vin": "{{.VinCount}}"}'>
+                            <a class="block-element-link" href="/tx/{{.TxID}}"></a>
+                        </span>
+                        {{end}}
+                        {{if gt $txCount 50}}
+                        <!-- show total number of tickets -->
+                        <span class="block-ticket" style="flex-grow: 10; flex-basis: 50px;" title="Total of {{$txCount}} transactions">
+                            <a class="block-element-link" href="#">+ {{intSubtract $txCount 30}}</a>
+                        </span>
+                        {{end}}
+                        </div>
+                    </div>
+                {{end}}
+                </div>
+                {{end}}
+            </div>
+            <a class="no-underline d-block mt-4" data-target="visualBlocks.showmore" href="/blocks"><div class="showmore"><p>View BlockChain History</p></div></a>
+        </div>
+    </div>
+
+    {{ template "footer" . }}
+</body>
+</html>
+{{end}}

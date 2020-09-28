@@ -1,0 +1,256 @@
+{
+  "insight": {
+    "duration": 60,
+    "attackers": [
+      {
+        "name": "first",
+        "frequency": 10,
+        "endpoints": [
+          "/insight/api/blocks",
+          "/insight/api/block/1",
+          "/insight/api/block/100000",
+          "/insight/api/block/266000",
+          "/insight/api/block/000000000000c41019872ff7db8fd2e9bfa05f42d3f8fee8e895e8c1e5b8dcba",
+          "/insight/api/block/0000000000002fac892b31f36e43b2c9a1d1007985032b1ea6080fb4a4f7dd51",
+          "/insight/api/block/00000000000028f94925abad9f61b25ea041e662be824eb717c9f1dc1a47334c",
+          "/insight/api/block/00000000000000b3151a938d02d6d7eee77ad91916b301ff6054ab414ec82b11",
+          "/insight/api/block/0000000000000000043a839a31aec197a8d71cc472327d86a8c665fa9af4cdaa",
+          "/insight/api/block-index/100001",
+          "/insight/api/block-index/266001",
+          "/insight/api/block-index/309999",
+          "/insight/api/rawblock/100002",
+          "/insight/api/rawblock/266002",
+          "/insight/api/rawblock/310000",
+          "/insight/api/addr/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx",
+          "/insight/api/addr/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx/utxo",
+          "/insight/api/addr/DspCVzEw21aDGZ43Ax24rjFqsHimiJbF4qe",
+          "/insight/api/addr/DspCVzEw21aDGZ43Ax24rjFqsHimiJbF4qe/utxo",
+          "/insight/api/addr/DcfQyJ8RBPNFN8PoRBNwhJmE9PFwpNLSE4N",
+          "/insight/api/addr/DcfQyJ8RBPNFN8PoRBNwhJmE9PFwpNLSE4N/utxo",
+          "/insight/api/addrs/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx/txs",
+          "/insight/api/addrs/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx/utxo",
+          "/insight/api/addrs/Dsh3RaFqAgnfnGqY9cQiJUde5cR7qwdQP8r,DsSjYHYcc7iJZaJ74CBb4dHNcukdoiLxUQ1/txs",
+          "/insight/api/addrs/Dsh3RaFqAgnfnGqY9cQiJUde5cR7qwdQP8r,DsSjYHYcc7iJZaJ74CBb4dHNcukdoiLxUQ1/utxo",
+          "/insight/api/addrs/Dsoa62CGHSupBhPNoiBGTiGmUVy9C6fLUhL,Dsj7Myj4QLyPRr5aZxoMeKeffXoueeGtYgP/txs",
+          "/insight/api/addrs/Dsoa62CGHSupBhPNoiBGTiGmUVy9C6fLUhL,Dsj7Myj4QLyPRr5aZxoMeKeffXoueeGtYgP/utxo",
+          "/insight/api/tx/7683178c578ccd673c4af052826321b702ad583e404db33a51ea7ddc5cee3004",
+          "/insight/api/tx/13d868175d0a9a40e52714abecb618427f4766f1cf0f9ee0befa02a452570164",
+          "/insight/api/tx/c6a64ab3d3e0889955fc2db4733ac7498d095e0018aa1dca562a031d2c1c8594",
+          "/insight/api/tx/c0c5e96cb8d2ac35570abc1031406f26b5c44154e4d210c10a9431908174de81",
+          "/insight/api/tx/73b52d6ce7374e9d353de18e2a54711941c40fe06a5293dff5832a06d43cdbd0",
+          "/insight/api/rawtx/73b52d6ce7374e9d353de18e2a54711941c40fe06a5293dff5832a06d43cdbd0",
+          "/insight/api/rawtx/616867342c817777628851baf97878e13da49586aeee6938b34de186412414e0",
+          "/insight/api/rawtx/7346c84dc1f4a3cd444866f0a1702aba6534f0b6b528bdce04598fedf260f1cd",
+          "/insight/api/txs?block=000000000000001a2ebaf929aec7814580489fb1260f416b02db0592e1f1b1e6",
+          "/insight/api/txs?block=000000000000000aeef15e1efdbadc71b426dafb2e0dc8549f2dac5fb380cfaf",
+          "/insight/api/txs?block=00000000000000059e5696dcdbbe6b0dda211d6dd7c493087ede2044a285bc6a",
+          "/insight/api/txs?address=Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx",
+          "/insight/api/txs?address=Dsd8i7LHGCfKWtog5kwYL5Ut7pBhMLKPVZo",
+          "/insight/api/txs?address=Dsa4zhhBhLuGKmsgHc1hHp9acW6WbpyuN7P",
+          "/insight/api/txs?address=DcpR6s7iZsPMJRorJymeYP4K9sHo35RAWZB",
+          "/insight/api/txs?address=Dsksm4jgwFJScNznBz9Rdo4R2zmUXuM71CP",
+          "/insight/api/txs?address=DsZFcexJZtXXmgsbJRjLsq8btXLh7EBSDL7",
+          "/insight/api/status",
+          "/insight/api/sync",
+          "/insight/api/utils/estimatefee",
+          "/insight/api/peer"
+        ]
+      }
+    ]
+  },
+  "insight-addr": {
+    "duration": 60,
+    "attackers": [
+      {
+        "name": "first",
+        "frequency": 10,
+        "endpoints": [
+          "/insight/api/addr/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx",
+          "/insight/api/addr/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx/utxo",
+          "/insight/api/addr/DspCVzEw21aDGZ43Ax24rjFqsHimiJbF4qe",
+          "/insight/api/addr/DspCVzEw21aDGZ43Ax24rjFqsHimiJbF4qe/utxo",
+          "/insight/api/addr/DcfQyJ8RBPNFN8PoRBNwhJmE9PFwpNLSE4N",
+          "/insight/api/addr/DcfQyJ8RBPNFN8PoRBNwhJmE9PFwpNLSE4N/utxo",
+          "/insight/api/addr/DcfQyJ8RBPNFN8PoRBNwhJmE9PFwpNLSxxx",
+          "/insight/api/addr/DcfQyJ8RBPNFN8PoRBNwhJmE9PFwpNLSxxx/utxo",
+          "/insight/api/addrs/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx/txs",
+          "/insight/api/addrs/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx/utxo",
+          "/insight/api/addrs/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qexxx/txs",
+          "/insight/api/addrs/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qexxx/utxo",
+          "/insight/api/addrs/Dsh3RaFqAgnfnGqY9cQiJUde5cR7qwdQP8r,DsSjYHYcc7iJZaJ74CBb4dHNcukdoiLxUQ1/txs",
+          "/insight/api/addrs/Dsh3RaFqAgnfnGqY9cQiJUde5cR7qwdQP8r,DsSjYHYcc7iJZaJ74CBb4dHNcukdoiLxUQ1/utxo",
+          "/insight/api/addrs/Dsoa62CGHSupBhPNoiBGTiGmUVy9C6fLUhL,Dsj7Myj4QLyPRr5aZxoMeKeffXoueeGtYgP/txs",
+          "/insight/api/addrs/Dsoa62CGHSupBhPNoiBGTiGmUVy9C6fLUhL,Dsj7Myj4QLyPRr5aZxoMeKeffXoueeGtYgP/utxo",
+          "/insight/api/addrs/Dsoa62CGHSupBhPNoiBGTiGmUVy9C6fLUhL,Dsj7Myj4QLyPRr5aZxoMeKeffXoueeGtxxx/txs",
+          "/insight/api/addrs/Dsoa62CGHSupBhPNoiBGTiGmUVy9C6fLUhL,Dsj7Myj4QLyPRr5aZxoMeKeffXoueeGtxxx/utxo",
+          "/insight/api/txs?address=Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx",
+          "/insight/api/txs?address=Dsd8i7LHGCfKWtog5kwYL5Ut7pBhMLKPVZo",
+          "/insight/api/txs?address=Dsa4zhhBhLuGKmsgHc1hHp9acW6WbpyuN7P",
+          "/insight/api/txs?address=DcpR6s7iZsPMJRorJymeYP4K9sHo35RAWZB",
+          "/insight/api/txs?address=Dsksm4jgwFJScNznBz9Rdo4R2zmUXuM71CP",
+          "/insight/api/txs?address=DsZFcexJZtXXmgsbJRjLsq8btXLh7EBSDL7",
+          "/insight/api/txs?address=DsZFcexJZtXXmgsbJRjLsq8btXLh7EBxxxx"
+        ]
+      }
+    ]
+  },
+  "insight-addr-noutxo": {
+    "duration": 60,
+    "attackers": [
+      {
+        "name": "first",
+        "frequency": 10,
+        "endpoints": [
+          "/insight/api/addr/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx",
+          "/insight/api/addr/DspCVzEw21aDGZ43Ax24rjFqsHimiJbF4qe",
+          "/insight/api/addr/DcfQyJ8RBPNFN8PoRBNwhJmE9PFwpNLSE4N",
+          "/insight/api/addr/DcfQyJ8RBPNFN8PoRBNwhJmE9PFwpNLSxxx",
+          "/insight/api/addrs/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx/txs",
+          "/insight/api/addrs/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qexxx/txs",
+          "/insight/api/addrs/Dsh3RaFqAgnfnGqY9cQiJUde5cR7qwdQP8r,DsSjYHYcc7iJZaJ74CBb4dHNcukdoiLxUQ1/txs",
+          "/insight/api/addrs/Dsoa62CGHSupBhPNoiBGTiGmUVy9C6fLUhL,Dsj7Myj4QLyPRr5aZxoMeKeffXoueeGtYgP/txs",
+          "/insight/api/addrs/Dsoa62CGHSupBhPNoiBGTiGmUVy9C6fLUhL,Dsj7Myj4QLyPRr5aZxoMeKeffXoueeGtxxx/txs",
+          "/insight/api/txs?address=Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx",
+          "/insight/api/txs?address=Dsd8i7LHGCfKWtog5kwYL5Ut7pBhMLKPVZo",
+          "/insight/api/txs?address=Dsa4zhhBhLuGKmsgHc1hHp9acW6WbpyuN7P",
+          "/insight/api/txs?address=DcpR6s7iZsPMJRorJymeYP4K9sHo35RAWZB",
+          "/insight/api/txs?address=Dsksm4jgwFJScNznBz9Rdo4R2zmUXuM71CP",
+          "/insight/api/txs?address=DsZFcexJZtXXmgsbJRjLsq8btXLh7EBSDL7",
+          "/insight/api/txs?address=DsZFcexJZtXXmgsbJRjLsq8btXLh7EBxxxx"
+        ]
+      }
+    ]
+  },
+  "insight-addr-info-only": {
+    "duration": 60,
+    "attackers": [
+      {
+        "name": "first",
+        "frequency": 10,
+        "endpoints": [
+          "/insight/api/addr/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx",
+          "/insight/api/addr/DspCVzEw21aDGZ43Ax24rjFqsHimiJbF4qe",
+          "/insight/api/addr/DcfQyJ8RBPNFN8PoRBNwhJmE9PFwpNLSE4N",
+          "/insight/api/addr/DcfQyJ8RBPNFN8PoRBNwhJmE9PFwpNLSxxx",
+          "/insight/api/addrs/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx/txs",
+          "/insight/api/addrs/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qexxx/txs",
+          "/insight/api/addrs/Dsh3RaFqAgnfnGqY9cQiJUde5cR7qwdQP8r,DsSjYHYcc7iJZaJ74CBb4dHNcukdoiLxUQ1/txs",
+          "/insight/api/addrs/Dsoa62CGHSupBhPNoiBGTiGmUVy9C6fLUhL,Dsj7Myj4QLyPRr5aZxoMeKeffXoueeGtYgP/txs",
+          "/insight/api/addrs/Dsoa62CGHSupBhPNoiBGTiGmUVy9C6fLUhL,Dsj7Myj4QLyPRr5aZxoMeKeffXoueeGtxxx/txs",
+          "/insight/api/txs?address=Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx",
+          "/insight/api/txs?address=Dsd8i7LHGCfKWtog5kwYL5Ut7pBhMLKPVZo",
+          "/insight/api/txs?address=Dsa4zhhBhLuGKmsgHc1hHp9acW6WbpyuN7P",
+          "/insight/api/txs?address=DcpR6s7iZsPMJRorJymeYP4K9sHo35RAWZB",
+          "/insight/api/txs?address=Dsksm4jgwFJScNznBz9Rdo4R2zmUXuM71CP",
+          "/insight/api/txs?address=DsZFcexJZtXXmgsbJRjLsq8btXLh7EBSDL7",
+          "/insight/api/txs?address=DsZFcexJZtXXmgsbJRjLsq8btXLh7EBxxxx"
+        ]
+      }
+    ]
+  },
+  "rotation": {
+    "duration": 60,
+    "attackers": [
+      {
+        "frequency": 5,
+        "endpoints": [
+          "/api/address/Dscq448NxXwhwSajYLVbA1wWrdheQVvcUuG",
+          "/api/address/DsVECaj9tP9jb2PvsStMgmNYCYxt1NS7ZwY/amountflow/day",
+          "/api/address/Dca7REgeQCfQ7okBSJAkJ8p7vr3x1yjZJxU/count/20",
+          "/api/address/Dca8bQ4UX3ZKFkNTbUkmHbrfdhur1sPSNfL/count/50/raw",
+          "/api/address/Dca9nYRNadbFBS9JyimUe5wNzUdXSzarHuv/count/100/skip/10",
+          "/api/address/Dca94FPuRFWrnxKNYEFTvCjCz9A9qnrCZ91/count/20/skip/50/raw",
+          "/api/address/DcaANcUot1dFvyKXvoZUApVej1tY451NRyx/raw",
+          "/api/address/DcaAZYsnbCNqq1JPUCikd34zj5qPX6DcXjA/totals",
+          "/api/address/DcaDEDuwVUAFAn4TURoyyCFJJvKSExUHHmC/types/week",
+          "/api/agenda/lnsupport",
+          "/api/block/best",
+          "/api/block/best/hash",
+          "/api/block/best/header",
+          "/api/block/best/height",
+          "/api/block/best/pos",
+          "/api/block/best/size",
+          "/api/block/best/subsidy",
+          "/api/block/best/tx",
+          "/api/block/best/tx/count",
+          "/api/block/best/verbose",
+          "/api/block/hash/0000000000000001b30d4a5afa3fe92dcd35ba3c4f66ab074559dc68bb7a5232",
+          "/api/block/hash/0000000000000052609a06ebe26d365bc112053b00ac46647555f1932b2f2e33/header",
+          "/api/block/hash/00000000000000031a68ace4ba7ba57a6a2b8a306ba9040c974408c8a1f85056/height",
+          "/api/block/hash/000000000000014434fb6165aca1f40255dc90efefc36b607d02d7847486c3a9/pos",
+          "/api/block/hash/000000000000000b83d4ee2a31f7f0f8713ecda5f6ad795004c1f4cf75b930e5/size",
+          "/api/block/hash/00000000000001ed4733026e9fa35094698aa8d431ff828bcf82b037c3f16ef3/subsidy",
+          "/api/block/hash/000000000000000051be56c7c452f7e2a777e98fc673ff996ae0ad99781801f7/tx",
+          "/api/block/hash/000000000000235c637006abb1de96d99dcb75fde8817de9d87ba57f73cea88b/tx/count",
+          "/api/block/hash/00000000000012081a9e5b4b06650fd40f5904f13d25e44fc6443e198d047103/verbose",
+          "/api/block/range/148290/148390",
+          "/api/block/range/34783/35783/size",
+          "/api/block/range/90198/90398/2",
+          "/api/block/range/134976/135176/2/size",
+          "/api/block/83811",
+          "/api/block/243754/hash",
+          "/api/block/218497/header",
+          "/api/block/18616/pos",
+          "/api/block/64276/size",
+          "/api/block/129828/subsidy",
+          "/api/block/19790/tx",
+          "/api/block/284229/tx/count",
+          "/api/block/88145/verbose",
+          "/api/mempool/sstx",
+          "/api/mempool/sstx/details",
+          "/api/mempool/sstx/details/10",
+          "/api/mempool/sstx/fees",
+          "/api/mempool/sstx/fees/20",
+          "/api/stake/diff",
+          "/api/stake/diff/b/167598",
+          "/api/stake/diff/current",
+          "/api/stake/diff/estimates",
+          "/api/stake/diff/r/224316/224416",
+          "/api/stake/pool",
+          "/api/stake/pool/b/100028",
+          "/api/stake/pool/b/261178/full",
+          "/api/stake/pool/b/0000000000000000f52657e756897b86f06d74c6382de48d9e7bbea2733a588e/full",
+          "/api/stake/pool/full",
+          "/api/stake/pool/r/245982/246082",
+          "/api/stake/vote/info",
+          "/api/status",
+          "/api/supply",
+          "/api/ticketpool",
+          "/api/tx/decoded/a73b7ccd1a82a9d9e9775c2f0d1b096368d2fc3f8422bbaa19b1c4f8f8a63ada",
+          "/api/tx/hex/6c65498c76ba2175049ce2f3cc7eaeb115ea636db0609ca67396c8cb9530f8f2",
+          "/api/tx/e95a5bd4b322e9cd9845961ed5225dee9feb43fa26ff9d900c004f6bb7042fa3",
+          "/api/tx/a8d6d4942a86d92be649b2a2992d4173cd0ce0f863da0823d91030030b46c4b5/in",
+          "/api/tx/c7f92bd0c8a8915d58b475831e0ea77f0071561d36314c267880911392387560/in/1",
+          "/api/tx/dc176f2232317b8e20b1163c3637eb1b6a445e32f04a6db8183324cbbcc8c763/out",
+          "/api/tx/f7d4cb5f611725bc4a4cbbbb3c021079cd2fcdd11d5f0237186f8e53e9c53e57/out/0",
+          "/api/tx/b7f3dd99ba3bbefead4afd519007cd3c49cc2539a2d4786f2f7f78a33bf1e4ae/trimmed",
+          "/api/tx/4d5cdb033a31b72805ba4161a68f41908673713811198c6e858fc59f62a1184b/vinfo"
+        ]
+      }
+    ]
+  },
+  "treasury": {
+    "duration": 60,
+    "attackers": [
+      {
+        "name": "first",
+        "frequency": 1,
+        "endpoints": [
+          "/api/address/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx/types/day",
+          "/api/address/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx/amountflow/day",
+          "/download/address/io/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx"
+        ]
+      },
+      {
+        "name": "second",
+        "frequency": 1,
+        "delay": 30,
+        "endpoints": [
+          "/api/address/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx?txntype=merged_debit",
+          "/api/address/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx/types/week",
+          "/api/address/Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx/amountflow/week"
+        ]
+      }
+    ]
+  }
+}
